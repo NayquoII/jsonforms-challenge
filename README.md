@@ -1,46 +1,94 @@
-# Getting Started with Create React App
+# JSONForms Read-Only Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cette application est une démonstration du challenge proposé par **Cyberun**. Il s'agit d'une application React en **TypeScript** utilisant la librairie **jsonforms** avec uniquement les **vanilla-renderers**, et des renderers personnalisés en **lecture seule**.
 
-## Available Scripts
+## 🚀 Démonstration en ligne
 
-In the project directory, you can run:
+Lien de production (via Vercel) : **[https://jsonforms-challenge-nayquoii.vercel.app](https://jsonforms-challenge-nayquoii.vercel.app)**
 
-### `npm start`
+> Remplacez l’URL ci-dessus par celle générée dans votre propre déploiement.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📂 Structure du projet
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+jsonforms-challenge/
+├── public/
+├── src/
+│   ├── components/                # Custom renderers React
+│   │   ├── ReadOnlyStringRenderer.tsx
+│   │   ├── ReadOnlyMultilineRenderer.tsx
+│   │   ├── ReadOnlyEnumRenderer.tsx
+│   │   └── ReadOnlyCountryPercentRenderer.tsx
+│   ├── renderers/                 # Testers pour chaque custom renderer
+│   │   ├── ReadOnlyStringRenderer.tester.ts
+│   │   ├── ReadOnlyMultilineRenderer.tester.ts
+│   │   ├── ReadOnlyEnumRenderer.tester.ts
+│   │   └── ReadOnlyCountryPercentRenderer.tester.ts
+│   ├── schema/                    # Schéma JSON et UI schema
+│   │   ├── schema.ts
+│   │   └── uiSchema.ts
+│   ├── styles/                    # Fichier CSS global pour les rendus
+│   │   └── ReadOnlyStyles.css
+│   ├── data.ts                    # Données d'exemple utilisées pour le rendu
+│   ├── App.tsx                    # Point d’entrée de l’application
+│   ├── index.tsx                  # Montage React
+│   └── ...                        # autres fichiers (tests, config)
+├── .gitignore
+├── package.json
+└── README.md                      # Ce fichier
+```
 
-### `npm test`
+## 🔧 Installation & exécution locale
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Cloner le dépôt**
 
-### `npm run build`
+   ```bash
+   git clone git@github.com:NayquoII/jsonforms-challenge.git
+   cd jsonforms-challenge
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Installer les dépendances**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Lancer le serveur de développement**
 
-### `npm run eject`
+   ```bash
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   L’application sera disponible sur `http://localhost:3000`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Créer une build de production**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ```bash
+   npm run build
+   ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📦 Déploiement
 
-## Learn More
+Ce projet peut être déployé sur n’importe quel hébergement statique. Il est configuré pour Vercel :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Pousser votre repo sur GitHub
+2. Créer un nouveau projet sur [Vercel](https://vercel.com) et importer ce repository
+3. Vercel détecte automatiquement Create React App (build : `npm run build`, dossier de sortie : `build`)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎯 Objectif du challenge
+
+- Créer des **custom renderers** pour afficher les données en **lecture seule**
+- Utiliser exclusivement les **vanilla-renderers** de `@jsonforms/vanilla-renderers`
+- Affichage :
+  - Champs texte monoligne & enum : deux colonnes (question / réponse), avec badges arrondis pour les enums
+  - Champs texte multiligne : bloc full-width sous le label
+  - Tableau pays / pourcentage : présentation tabulaire lisible
+
+## 🤝 Accès au code source
+
+- **Repository GitHub** : [https://github.com/NayquoII/jsonforms-challenge](https://github.com/NayquoII/jsonforms-challenge)
+
+---
+
+*Developed by Gregory Naji – Mai 2025*
+
