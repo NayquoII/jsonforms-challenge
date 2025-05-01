@@ -1,0 +1,57 @@
+.field.two-column {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.question-label {
+    font-weight: bold;
+    flex: 1;
+}
+
+.question-description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+.response {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.response .badge {
+    background-color: #d1e7dd;
+}
+
+.country-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+.country-table th,
+.country-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.field.full-width > .question-label {
+    flex: none;
+    width: auto;
+    text-align: left;
+}
+
+.field.two-column > .question-label {
+    width: 45%;
+}
